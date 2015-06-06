@@ -19,7 +19,12 @@ class ViewController: UIViewController {
         
         let randomColor = [kCIInputAngleKey: (Double(arc4random_uniform(314) / 100))]
         
-//        let filteredImage = inputImage.imageByApplyingFilter("CIHueAdjust", withInputParameters: )
+        let filteredImage = inputImage.imageByApplyingFilter("CIHueAdjust", withInputParameters: randomColor)
+        
+        let renderedImage = context.createCGImage(filteredImage, fromRect: filteredImage.extent())
+        
+        photoImageView.image = UIImage(CGImage: renderedImage)
+        
     }
     
     override func viewDidLoad() {
