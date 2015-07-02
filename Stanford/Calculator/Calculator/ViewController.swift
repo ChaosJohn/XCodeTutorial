@@ -25,12 +25,7 @@ class ViewController: UIViewController {
     var userIsInTheMiddleOfTypingANumber: Bool = false
     
     @IBAction func appendDigit(sender: UIButton) {
-//        let digit = sender.currentTitle
         if let digit = sender.currentTitle {
-//            println("digit = \(digit)")
-//            if display.text == "" {
-//                println("emplty")
-//            }
             if userIsInTheMiddleOfTypingANumber {
                 display.text = display.text! + digit
             } else {
@@ -48,39 +43,22 @@ class ViewController: UIViewController {
         }
         if let operation = sender.currentTitle {
             switch operation {
-            case "×": performOperation{$0 * $1}
-//                if operandStack.count >= 2 {
-//                displayValue = operandStack.removeLast() * operandStack.removeLast()
-//                    enter()
-//                }
-//                performOperation({
-////                    (op1: Double, op2: Double) -> Double in
-////                    (op1, op2) in
-////                    op1 * op2
-//                    $0 * $1
-//                })
-            case "÷": performOperation{$1 / $0}
-//                if operandStack.count >= 2 {
-//                    displayValue = operandStack.removeLast() / operandStack.removeLast()
-//                    enter()
-//                }
-            case "+": performOperation{$0 + $1}
-//                if operandStack.count >= 2 {
-//                    displayValue = operandStack.removeLast() + operandStack.removeLast()
-//                    enter()
-//                }
-            case "−": performOperation{$1 - $0}
-//                if operandStack.count >= 2 {
-//                    displayValue = operandStack.removeLast() - operandStack.removeLast()
-//                    enter()
-//                }
-            case "√": performOperation{sqrt($0)}
+            case "×": performOperation(multiply)
+            case "÷": performOperation({ (op1: Double, op2: Double) -> Double in
+                return op2 / op1 })
+            case "+": performOperation({ (op1, op2) in op1 + op2 })
+            case "−": performOperation({ $1 - $0 })
+            case "√": performOperation{ sqrt($0) }
             default:
                 break
             }
         } else {
             println("nil")
         }
+    }
+    
+    func multiply(op1: Double, op2: Double) -> Double {
+        return op1 * op2
     }
     
     func performOperation(operation: (Double, Double) -> Double) {
@@ -97,14 +75,6 @@ class ViewController: UIViewController {
             enter()
         }
     }
-
-//    func abc(a: Double, b: Double) {
-//        
-//    }
-//    
-//    func abc(a: Double) {
-//        
-//    }
     
     var operandStack: Array<Double>  = Array<Double>()
     
