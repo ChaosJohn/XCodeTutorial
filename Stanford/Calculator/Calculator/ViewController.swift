@@ -45,7 +45,7 @@ class ViewController: UIViewController {
             switch operation {
             case "×": performOperation(multiply)
             case "÷": performOperation({ (op1: Double, op2: Double) -> Double in
-                return op2 / op1 })
+                return op2 / op1 }) // the return be removed
             case "+": performOperation({ (op1, op2) in op1 + op2 })
             case "−": performOperation({ $1 - $0 })
             case "√": performOperation{ sqrt($0) }
