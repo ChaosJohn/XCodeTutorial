@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>2D778060-5DF6-4993-BAF5-698D244BFFF2</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>TaskList</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>04F56421FF5967E0108599E188806F6856F7D987</key>
 		<string>github.com:ChaosJohn/XCodeTutorial.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Samples/TaskList/TaskList.xcodeproj/project.xcworkspace</string>
+	<string>Samples/TaskList/TaskList.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>04F56421FF5967E0108599E188806F6856F7D987</key>
