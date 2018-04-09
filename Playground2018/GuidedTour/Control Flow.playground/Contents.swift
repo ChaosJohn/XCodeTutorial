@@ -1,5 +1,7 @@
 //: Playground - noun: a place where people can play
 
+import Foundation
+
 let individualScores = [75, 43, 103, 87, 12]
 var teamScore = 0
 for score in individualScores {

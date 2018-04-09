@@ -1,5 +1,7 @@
 //: Playground - noun: a place where people can play
 
+import Foundation
+
 print("Hello, world!")
 
 var myVariable = 42
